@@ -43,3 +43,10 @@ Thumbs.db
 *.shm
 coverage/
 profile.out
+
+Architecture Decision Record/
+Product Requirements Document/
+Software Architecture Document/
+
+Project Aether Glossary.md
+FOUNDATION.md
