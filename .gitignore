@@ -1,0 +1,45 @@
+# ── Go ──
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+*.o
+*.a
+*.mod
+*.sum
+/go.sum
+vendor/
+dist/
+build/
+bin/
+out/
+tmp/
+
+# ── IDE & Editor ──
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+*.iml
+.venv/
+.vs/
+
+# ── Agent temp scripts ──
+.agents/
+
+# ── Project specific ──
+*.log
+*.trace
+*.db
+*.sqlite
+*.sqlite3
+*.wal
+*.shm
+coverage/
+profile.out
