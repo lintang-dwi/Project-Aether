@@ -1,288 +1,201 @@
 /**
  * Project Aether — GitHub Pages App
- * Loads & renders all existing markdown files dynamically
+ * Futuristic single-page summary. No file navigation.
  */
 
-// ─── File Index (mirrors existing structure, no modifications) ───
-const FILES = {
-  "Project Aether": {
-    type: "section",
-    items: [
-      { name: "Overview", path: "../README.md" },
-      { name: "Foundation", path: "../FOUNDATION.md" },
-      { name: "Glossary", path: "../Project%20Aether%20Glossary.md" },
-    ]
-  },
-  "Product Requirements Document": {
-    type: "folder",
-    base: "../Product%20Requirements%20Document/",
-    items: [
-      "1. Executive Summary.md",
-      "2. Product Tenets.md",
-      "3. Product Overview.md",
-      "4. Problem Statement.md",
-      "5. Goals.md",
-      "6. Success Metrics.md",
-      "7. Target Users.md",
-      "8. Product Scope.md",
-      "9. Product Architecture Overview.md",
-      "10. Core Capabilities.md",
-      "11. Functional Requirements.md",
-      "12. Non-Functional Requirements (NFR).md",
-      "13. System Constraints & Assumptions.md",
-      "14. Development Roadmap.md",
-      "15. Success Metrics & Acceptance Criteria.md",
-    ]
-  },
-  "Architecture Decision Record": {
-    type: "folder",
-    base: "../Architecture%20Decision%20Record/",
-    items: [
-      "ADR-001 — Runtime Coordinator as Core Orchestrator.md",
-      "ADR-002 — Knowledge Graph as Source of Understanding.md",
-      "ADR-003 — Workspace → Knowledge → Task → Context → AI Dependency Model.md",
-      "ADR-004 — Event-Driven Runtime Architecture.md",
-      "ADR-005 — Deterministic Core vs AI Responsibility Boundary.md",
-      "ADR-006 — Local First Desktop Runtime.md",
-      "ADR-007 — Extension atau Plugin Architecture.md",
-      "ADR-008 — Security Boundary dan Permission Model.md",
-      "ADR-010 — AI Context Retrieval Strategy.md",
-      "ADR-011 — Go as Runtime Implementation Language.md",
-      "ADR-012 — Desktop Framework Selection (Wails).md",
-      "ADR-013 — Storage Strategy (SQLite + Graph Storage).md",
-      "ADR-014 — Event Bus Implementation.md",
-      "ADR-015 — Parser Architecture (Tree-sitter atau AST Pipeline).md",
-      "ADR-016 — Git Integration Strategy.md",
-      "ADR-017 — AI Provider Abstraction Layer.md",
-      "ADR-018 — Local Model Support Strategy.md",
-      "ADR-019 — Configuration Management.md",
-      "ADR-020 — Build & Release Architecture.md",
-    ]
-  },
-  "Software Architecture Document": {
-    type: "folder",
-    base: "../Software%20Architecture%20Document/",
-    items: [
-      "1. Architecture Overview.md",
-      "2. Architectural Principles.md",
-      "3. System Context Diagram.md",
-      "4. Container Architecture.md",
-      "5. Runtime Architecture Detail.md",
-      "6. Graph Engine Architecture.md",
-      "7. Knowledge Engine Architecture.md",
-      "8. Task Engine Architecture.md",
-      "9. Context Engine Architecture.md",
-      "10. Agent Runtime Architecture.md",
-      "11. Tool Runtime Architecture.md",
-      "12. Validation Engine Architecture.md",
-      "13. Memory Engine Architecture.md",
-      "14. Event Architecture.md",
-      "15. Storage Architecture.md",
-      "16. Workspace Architecture.md",
-      "17. Git Engine Architecture.md",
-      "18. Parser & Knowledge Extraction Architecture.md",
-      "19. Knowledge Graph Architecture.md",
-      "20. Runtime Coordinator Architecture.md",
-      "21. UI Engine Architecture.md",
-      "22. Deployment Architecture.md",
-      "23. Security Architecture.md",
-      "24. Observability Architecture.md",
-      "25. Extension & Plugin Architecture.md",
-      "26. API & External Interface Architecture.md",
-      "27. Data Flow Architecture.md",
-      "28. Performance & Scalability Architecture.md",
-      "29. Testing & Quality Architecture.md",
-      "30. Final System Architecture Summary.md",
-    ]
-  }
-};
-
-// ─── State ───
-let allDocIndex = [];
-
-// ─── DOM refs ───
-const sidebar = document.getElementById('sidebar');
-const content = document.getElementById('content');
-const searchInput = document.getElementById('search-input');
-const searchResults = document.getElementById('search-results');
-
-// ─── Init ───
 document.addEventListener('DOMContentLoaded', () => {
-  renderSidebar();
-  setupSearch();
   initBgCanvas();
-  loadWelcome();
+  renderContent();
+  setupScrollAnimations();
 });
 
-// ─── Render Sidebar Navigation ───
-function renderSidebar() {
-  sidebar.innerHTML = '';
-  allDocIndex = [];
+// ─── Content ───
+function renderContent() {
+  document.getElementById('content').innerHTML = `
+    <div class="content-inner">
 
-  for (const [sectionName, section] of Object.entries(FILES)) {
-    const sectionEl = document.createElement('div');
-    sectionEl.className = 'nav-section';
+      <!-- ═══ HERO ═══ -->
+      <section class="hero">
+        <div class="hero-badge">v0.1.0 · GraphOS</div>
+        <h1 class="hero-title">
+          <span class="hero-letter" style="--i:0">A</span>
+          <span class="hero-letter" style="--i:1">E</span>
+          <span class="hero-letter" style="--i:2">T</span>
+          <span class="hero-letter" style="--i:3">H</span>
+          <span class="hero-letter" style="--i:4">E</span>
+          <span class="hero-letter" style="--i:5">R</span>
+        </h1>
+        <p class="hero-subtitle">
+          <strong>A</strong> Graph-Native
+          <strong>A</strong>utonomous
+          <strong>S</strong>oftware
+          <strong>E</strong>ngineering
+          <strong>R</strong>untime
+        </p>
+        <p class="hero-desc">
+          A runtime that understands software as structured knowledge — not just files.
+          Built for the next era of human-AI collaboration in engineering.
+        </p>
+        <div class="hero-actions">
+          <a class="btn-primary" href="#vision">Explore the Vision ↓</a>
+        </div>
+      </section>
 
-    const title = document.createElement('div');
-    title.className = 'nav-section-title';
-    title.innerHTML = `<span class="arrow">▼</span> ${sectionName} <span class="count">${section.items.length}</span>`;
-    title.addEventListener('click', () => {
-      title.classList.toggle('collapsed');
-    });
-    sectionEl.appendChild(title);
+      <!-- ═══ ACRONYM EXPLODER ═══ -->
+      <section id="acronym" class="section">
+        <h2 class="section-title">The Name</h2>
+        <div class="acronym-grid">
+          <div class="acronym-card"><span class="acr-letter">A</span><span class="acr-word">Graph-Native</span><span class="acr-desc">Built on a knowledge graph — relationships first, files second.</span></div>
+          <div class="acronym-card"><span class="acr-letter">U</span><span class="acr-word">niversal</span><span class="acr-desc">Language-agnostic runtime that understands any codebase.</span></div>
+          <div class="acronym-card"><span class="acr-letter">T</span><span class="acr-word">hinking</span><span class="acr-desc">AI-assisted reasoning layer over a deterministic core.</span></div>
+          <div class="acronym-card"><span class="acr-letter">O</span><span class="acr-word">rchestrated</span><span class="acr-desc">Event-driven coordination across all subsystems.</span></div>
+          <div class="acronym-card"><span class="acr-letter">M</span><span class="acr-word">odular</span><span class="acr-desc">Microkernel architecture — extend without modifying core.</span></div>
+          <div class="acronym-card"><span class="acr-letter">A</span><span class="acr-word">utonomous</span><span class="acr-desc">Self-aware runtime that evolves with the project.</span></div>
+          <div class="acronym-card"><span class="acr-letter">T</span><span class="acr-word">raceable</span><span class="acr-desc">Every decision logged, every change explainable.</span></div>
+          <div class="acronym-card"><span class="acr-letter">I</span><span class="acr-word">ntegrated</span><span class="acr-desc">One runtime for analysis, planning, execution, review.</span></div>
+          <div class="acronym-card"><span class="acr-letter">C</span><span class="acr-word">onsistent</span><span class="acr-desc">Knowledge Model stays in sync with source code.</span></div>
+          <div class="acronym-card"><span class="acr-letter">E</span><span class="acr-word">xtensible</span><span class="acr-desc">Plugin system for tools, providers, and languages.</span></div>
+          <div class="acronym-card"><span class="acr-letter">R</span><span class="acr-word">untime-First</span><span class="acr-desc">Desktop, CLI, API — all interfaces to the same runtime.</span></div>
+        </div>
+      </section>
 
-    const items = document.createElement('div');
-    items.className = 'nav-items';
-
-    section.items.forEach((item, idx) => {
-      let displayName, fullPath;
-      if (section.type === 'section') {
-        displayName = item.name;
-        fullPath = item.path;
-      } else {
-        displayName = item.replace(/\.md$/, '');
-        fullPath = section.base + encodeURIComponent(item);
-      }
-
-      allDocIndex.push({ name: displayName, path: fullPath, section: sectionName });
-
-      const a = document.createElement('a');
-      a.className = 'nav-item';
-      a.textContent = displayName;
-      a.dataset.path = fullPath;
-      a.addEventListener('click', (e) => {
-        e.preventDefault();
-        document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
-        a.classList.add('active');
-        loadDoc(fullPath);
-      });
-      items.appendChild(a);
-    });
-
-    sectionEl.appendChild(items);
-    sidebar.appendChild(sectionEl);
-
-    // Collapse sections with > 10 items initially
-    if (section.items.length > 10) {
-      title.classList.add('collapsed');
-    }
-  }
-}
-
-// ─── Load & Render Markdown ───
-async function loadDoc(path) {
-  content.innerHTML = `<div class="loading"><div class="spinner"></div>Loading...</div>`;
-  try {
-    const resp = await fetch(path);
-    if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
-    let md = await resp.text();
-
-    // Strip outermost code fences if present (some files are wrapped)
-    md = md.replace(/^```(?:markdown\s+)?(?:id="[^"]*")?\s*\n?/i, '');
-    md = md.replace(/\n```\s*$/, '');
-
-    const html = marked.parse(md, { breaks: true, gfm: true });
-    content.innerHTML = `<div class="content-inner markdown-body">${html}</div>`;
-
-    // Highlight code blocks
-    document.querySelectorAll('pre code').forEach(block => {
-      hljs.highlightElement(block);
-    });
-
-    // Update URL hash
-    const docName = path.split('/').pop().replace(/\.md$/, '');
-    history.replaceState(null, '', '#' + encodeURIComponent(path));
-  } catch (err) {
-    content.innerHTML = `<div class="error">Failed to load document: ${err.message}</div>`;
-  }
-}
-
-// ─── Welcome Page ───
-function loadWelcome() {
-  const sections = Object.entries(FILES);
-  const total = allDocIndex.length;
-  content.innerHTML = `
-    <div class="content-inner welcome">
-      <h1>Project Aether</h1>
-      <p class="subtitle">A Graph-Native Autonomous Software Engineering Runtime — explore the full documentation below.</p>
-      <div class="cards">
-        ${sections.map(([name, s]) => `
-          <div class="card" onclick="document.querySelector('.nav-section-title').click()">
-            <div class="icon">${getSectionIcon(name)}</div>
-            <div class="name">${name}</div>
-            <div class="desc">${s.items.length} documents</div>
+      <!-- ═══ PHILOSOPHY ═══ -->
+      <section id="philosophy" class="section">
+        <h2 class="section-title">Core Philosophy</h2>
+        <div class="phil-grid">
+          <div class="phil-card">
+            <div class="phil-icon">🧠</div>
+            <h3>Knowledge Before Code</h3>
+            <p>Source code is a <em>representation</em> of knowledge, not the truth itself. The runtime works from the Knowledge Model, not raw files.</p>
           </div>
-        `).join('')}
-      </div>
-      <div style="margin-top: 28px; font-size: 0.85rem; color: var(--text-muted);">
-        ${total} documents · Foundation → PRD → ADR → SAD
-      </div>
+          <div class="phil-card">
+            <div class="phil-icon">⚙️</div>
+            <h3>Runtime Before Interface</h3>
+            <p>The runtime is the system. Desktop apps, CLIs, APIs, and editor extensions are just interfaces to it.</p>
+          </div>
+          <div class="phil-card">
+            <div class="phil-icon">🔬</div>
+            <h3>Intelligence Through Structure</h3>
+            <p>AI understands projects through structured knowledge built by the runtime — not through raw file dumps.</p>
+          </div>
+          <div class="phil-card">
+            <div class="phil-icon">🎯</div>
+            <h3>Deterministic Core</h3>
+            <p>Everything that can be computed algorithmically stays in the runtime. AI handles reasoning and creativity only.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══ VISION ═══ -->
+      <section id="vision" class="section">
+        <h2 class="section-title">Vision &amp; Mission</h2>
+        <div class="vision-block">
+          <div class="vision-card primary">
+            <h3>Vision</h3>
+            <p>Build a software engineering runtime that understands projects as <strong>living knowledge models</strong>, enabling humans and AI to work together consistently, at scale, with full accountability.</p>
+          </div>
+          <div class="vision-card secondary">
+            <h3>Key Missions</h3>
+            <ul>
+              <li>Shift from <strong>file-centric</strong> to <strong>knowledge-centric</strong> development</li>
+              <li>Reduce dependency on LLM context windows</li>
+              <li>Provide a foundation for <strong>autonomous software engineering</strong></li>
+              <li>Build a modular, provider-independent architecture</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══ PRINCIPLES ═══ -->
+      <section id="principles" class="section">
+        <h2 class="section-title">Architectural Principles</h2>
+        <div class="principles-scroll">
+          <div class="principle-item"><span class="principle-tag">AP-001</span> Microkernel Architecture</div>
+          <div class="principle-item"><span class="principle-tag">AP-002</span> Service Isolation</div>
+          <div class="principle-item"><span class="principle-tag">AP-003</span> Event First</div>
+          <div class="principle-item"><span class="principle-tag">AP-004</span> API Driven</div>
+          <div class="principle-item"><span class="principle-tag">AP-005</span> Stateless Services</div>
+          <div class="principle-item"><span class="principle-tag">AP-006</span> Dependency Inversion</div>
+          <div class="principle-item"><span class="principle-tag">AP-007</span> Explicit Dependencies</div>
+          <div class="principle-item"><span class="principle-tag">AP-008</span> Transactional State</div>
+          <div class="principle-item"><span class="principle-tag">AP-009</span> Version Everything</div>
+          <div class="principle-item"><span class="principle-tag">AP-010</span> Observable by Default</div>
+        </div>
+      </section>
+
+      <!-- ═══ STACK ═══ -->
+      <section id="stack" class="section">
+        <h2 class="section-title">Technology Stack</h2>
+        <div class="stack-grid">
+          <div class="stack-item"><span class="stack-label">Language</span><span class="stack-value">Go</span></div>
+          <div class="stack-item"><span class="stack-label">Desktop</span><span class="stack-value">Wails</span></div>
+          <div class="stack-item"><span class="stack-label">Storage</span><span class="stack-value">SQLite + Graph Storage</span></div>
+          <div class="stack-item"><span class="stack-label">Parser</span><span class="stack-value">Tree-sitter</span></div>
+          <div class="stack-item"><span class="stack-label">AI Providers</span><span class="stack-value">Cloud / Local / Enterprise</span></div>
+          <div class="stack-item"><span class="stack-label">Architecture</span><span class="stack-value">Graph-Native Microkernel</span></div>
+        </div>
+      </section>
+
+      <!-- ═══ ROADMAP ═══ -->
+      <section id="roadmap" class="section">
+        <h2 class="section-title">Development Roadmap</h2>
+        <div class="roadmap">
+          <div class="roadmap-phase">
+            <div class="phase-dot"></div>
+            <div class="phase-content">
+              <h3>Phase 1 — Runtime Foundation</h3>
+              <p>Runtime Coordinator · Event System · Storage Layer</p>
+            </div>
+          </div>
+          <div class="roadmap-line"></div>
+          <div class="roadmap-phase">
+            <div class="phase-dot"></div>
+            <div class="phase-content">
+              <h3>Phase 2 — Understanding Engine</h3>
+              <p>Workspace Scanner · Parser Pipeline · Knowledge Model · Knowledge Graph</p>
+            </div>
+          </div>
+          <div class="roadmap-line"></div>
+          <div class="roadmap-phase">
+            <div class="phase-dot"></div>
+            <div class="phase-content">
+              <h3>Phase 3 — Intelligence Layer</h3>
+              <p>Context Engine · AI Provider · Planning System</p>
+            </div>
+          </div>
+          <div class="roadmap-line"></div>
+          <div class="roadmap-phase">
+            <div class="phase-dot"></div>
+            <div class="phase-content">
+              <h3>Phase 4 — Controlled Automation</h3>
+              <p>Action Processor · Validation · Git Integration</p>
+            </div>
+          </div>
+          <div class="roadmap-line"></div>
+          <div class="roadmap-phase">
+            <div class="phase-dot"></div>
+            <div class="phase-content">
+              <h3>Phase 5 — Extension Ecosystem</h3>
+              <p>Plugin System · External Integration · Community</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══ FOOTER ═══ -->
+      <footer class="footer">
+        <p>Project Aether — <strong>A</strong> Graph-Native <strong>A</strong>utonomous <strong>S</strong>oftware <strong>E</strong>ngineering <strong>R</strong>untime</p>
+        <p class="footer-meta">GraphOS · Draft Stage · Built with structured knowledge</p>
+      </footer>
+
     </div>
   `;
-
-  // Check hash for direct doc link
-  const hash = decodeURIComponent(location.hash.slice(1));
-  if (hash) {
-    const item = document.querySelector(`.nav-item[data-path="${hash}"]`);
-    if (item) item.click();
-  }
-}
-
-function getSectionIcon(name) {
-  if (name.includes('Foundation') || name === 'Project Aether') return '🚀';
-  if (name.includes('Product')) return '📋';
-  if (name.includes('Architecture Decision')) return '⚖️';
-  if (name.includes('Software')) return '🏗️';
-  return '📄';
-}
-
-// ─── Search ───
-function setupSearch() {
-  searchInput.addEventListener('focus', () => {
-    if (searchInput.value.trim()) showSearch();
-  });
-  searchInput.addEventListener('input', () => {
-    if (searchInput.value.trim()) showSearch();
-    else searchResults.classList.remove('show');
-  });
-  document.addEventListener('click', (e) => {
-    if (!e.target.closest('.header-search')) searchResults.classList.remove('show');
-  });
-}
-
-function showSearch() {
-  const q = searchInput.value.toLowerCase().trim();
-  if (!q) return;
-  const results = allDocIndex.filter(d => d.name.toLowerCase().includes(q) || d.section.toLowerCase().includes(q));
-  searchResults.innerHTML = results.slice(0, 20).map(r => `
-    <div class="search-result-item" data-path="${r.path}">
-      <div class="path">${r.section}</div>
-      <div class="match">${highlight(r.name, q)}</div>
-    </div>
-  `).join('');
-  searchResults.classList.add('show');
-  searchResults.querySelectorAll('.search-result-item').forEach(el => {
-    el.addEventListener('click', () => {
-      const path = el.dataset.path;
-      document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
-      const nav = document.querySelector(`.nav-item[data-path="${path}"]`);
-      if (nav) { nav.classList.add('active'); nav.scrollIntoView({ block: 'nearest' }); }
-      loadDoc(path);
-      searchResults.classList.remove('show');
-      searchInput.value = '';
-    });
-  });
-}
-
-function highlight(text, q) {
-  const idx = text.toLowerCase().indexOf(q);
-  if (idx === -1) return text;
-  return text.slice(0, idx) + '<mark>' + text.slice(idx, idx + q.length) + '</mark>' + text.slice(idx + q.length);
 }
 
 // ─── Animated Background (Particle Network) ───
 function initBgCanvas() {
   const canvas = document.getElementById('bg-canvas');
+  if (!canvas) return;
   const ctx = canvas.getContext('2d');
   let w, h, particles = [];
 
@@ -293,13 +206,12 @@ function initBgCanvas() {
   resize();
   window.addEventListener('resize', resize);
 
-  const PCOUNT = 80;
+  const PCOUNT = 90;
   for (let i = 0; i < PCOUNT; i++) {
     particles.push({
-      x: Math.random() * w,
-      y: Math.random() * h,
-      vx: (Math.random() - 0.5) * 0.3,
-      vy: (Math.random() - 0.5) * 0.3,
+      x: Math.random() * w, y: Math.random() * h,
+      vx: (Math.random() - 0.5) * 0.25,
+      vy: (Math.random() - 0.5) * 0.25,
       r: Math.random() * 2 + 0.5,
     });
   }
@@ -310,13 +222,11 @@ function initBgCanvas() {
       p.x += p.vx; p.y += p.vy;
       if (p.x < 0) p.x = w; if (p.x > w) p.x = 0;
       if (p.y < 0) p.y = h; if (p.y > h) p.y = 0;
-
       ctx.beginPath();
       ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
       ctx.fillStyle = 'rgba(56, 189, 248, 0.3)';
       ctx.fill();
     }
-
     for (let i = 0; i < particles.length; i++) {
       for (let j = i + 1; j < particles.length; j++) {
         const dx = particles[i].x - particles[j].x;
@@ -335,4 +245,20 @@ function initBgCanvas() {
     requestAnimationFrame(draw);
   }
   draw();
+}
+
+// ─── Scroll Reveal ───
+function setupScrollAnimations() {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.section, .hero, .footer').forEach(el => {
+    el.classList.add('fade-section');
+    observer.observe(el);
+  });
 }
