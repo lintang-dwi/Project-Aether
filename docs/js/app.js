@@ -1,6 +1,6 @@
 /**
  * Project Aether — GitHub Pages App
- * Futuristic single-page summary. No file navigation.
+ * Single-page summary — Bahasa Indonesia
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -9,7 +9,6 @@ document.addEventListener('DOMContentLoaded', () => {
   setupScrollAnimations();
 });
 
-// ─── Content ───
 function renderContent() {
   document.getElementById('content').innerHTML = `
     <div class="content-inner">
@@ -33,150 +32,150 @@ function renderContent() {
           <strong>R</strong>untime
         </p>
         <p class="hero-desc">
-          A runtime that understands software as structured knowledge — not just files.
-          Built for the next era of human-AI collaboration in engineering.
+          Runtime yang memahami perangkat lunak sebagai pengetahuan terstruktur — bukan sekadar kumpulan file.
+          Dibangun untuk era baru kolaborasi manusia dan AI dalam rekayasa perangkat lunak.
         </p>
         <div class="hero-actions">
-          <a class="btn-primary" href="#vision">Explore the Vision ↓</a>
+          <a class="btn-primary" href="#visi">Jelajahi Visi ↓</a>
         </div>
       </section>
 
-      <!-- ═══ ACRONYM EXPLODER ═══ -->
-      <section id="acronym" class="section">
-        <h2 class="section-title">The Name</h2>
+      <!-- ═══ AKRONIM ═══ -->
+      <section id="akronim" class="section">
+        <h2 class="section-title">Makna Nama</h2>
         <div class="acronym-grid">
-          <div class="acronym-card"><span class="acr-letter">A</span><span class="acr-word">Graph-Native</span><span class="acr-desc">Built on a knowledge graph — relationships first, files second.</span></div>
-          <div class="acronym-card"><span class="acr-letter">U</span><span class="acr-word">niversal</span><span class="acr-desc">Language-agnostic runtime that understands any codebase.</span></div>
-          <div class="acronym-card"><span class="acr-letter">T</span><span class="acr-word">hinking</span><span class="acr-desc">AI-assisted reasoning layer over a deterministic core.</span></div>
-          <div class="acronym-card"><span class="acr-letter">O</span><span class="acr-word">rchestrated</span><span class="acr-desc">Event-driven coordination across all subsystems.</span></div>
-          <div class="acronym-card"><span class="acr-letter">M</span><span class="acr-word">odular</span><span class="acr-desc">Microkernel architecture — extend without modifying core.</span></div>
-          <div class="acronym-card"><span class="acr-letter">A</span><span class="acr-word">utonomous</span><span class="acr-desc">Self-aware runtime that evolves with the project.</span></div>
-          <div class="acronym-card"><span class="acr-letter">T</span><span class="acr-word">raceable</span><span class="acr-desc">Every decision logged, every change explainable.</span></div>
-          <div class="acronym-card"><span class="acr-letter">I</span><span class="acr-word">ntegrated</span><span class="acr-desc">One runtime for analysis, planning, execution, review.</span></div>
-          <div class="acronym-card"><span class="acr-letter">C</span><span class="acr-word">onsistent</span><span class="acr-desc">Knowledge Model stays in sync with source code.</span></div>
-          <div class="acronym-card"><span class="acr-letter">E</span><span class="acr-word">xtensible</span><span class="acr-desc">Plugin system for tools, providers, and languages.</span></div>
-          <div class="acronym-card"><span class="acr-letter">R</span><span class="acr-word">untime-First</span><span class="acr-desc">Desktop, CLI, API — all interfaces to the same runtime.</span></div>
+          <div class="acronym-card"><span class="acr-letter">A</span><span class="acr-word">Graph-Native</span><span class="acr-desc">Dibangun di atas knowledge graph — relasi adalah yang utama, file hanyalah representasi.</span></div>
+          <div class="acronym-card"><span class="acr-letter">U</span><span class="acr-word">niversal</span><span class="acr-desc">Runtime yang agnostik terhadap bahasa pemrograman dan dapat memahami basis kode apa pun.</span></div>
+          <div class="acronym-card"><span class="acr-letter">T</span><span class="acr-word">hinking</span><span class="acr-desc">Lapisan penalaran berbantuan AI di atas inti sistem yang deterministik.</span></div>
+          <div class="acronym-card"><span class="acr-letter">O</span><span class="acr-word">rchestrated</span><span class="acr-desc">Koordinasi berbasis event di seluruh subsistem secara real-time.</span></div>
+          <div class="acronym-card"><span class="acr-letter">M</span><span class="acr-word">odular</span><span class="acr-desc">Arsitektur microkernel — perluas kemampuan tanpa menyentuh inti sistem.</span></div>
+          <div class="acronym-card"><span class="acr-letter">A</span><span class="acr-word">utonomous</span><span class="acr-desc">Runtime yang sadar diri dan berevolusi bersama proyek.</span></div>
+          <div class="acronym-card"><span class="acr-letter">T</span><span class="acr-word">raceable</span><span class="acr-desc">Setiap keputusan tercatat, setiap perubahan dapat dijelaskan.</span></div>
+          <div class="acronym-card"><span class="acr-letter">I</span><span class="acr-word">ntegrated</span><span class="acr-desc">Satu runtime untuk analisis, perencanaan, eksekusi, dan peninjauan.</span></div>
+          <div class="acronym-card"><span class="acr-letter">C</span><span class="acr-word">onsistent</span><span class="acr-desc">Knowledge Model selalu sinkron dengan source code.</span></div>
+          <div class="acronym-card"><span class="acr-letter">E</span><span class="acr-word">xtensible</span><span class="acr-desc">Sistem plugin untuk alat, penyedia layanan, dan bahasa.</span></div>
+          <div class="acronym-card"><span class="acr-letter">R</span><span class="acr-word">untime-First</span><span class="acr-desc">Desktop, CLI, API — semua antarmuka menuju runtime yang sama.</span></div>
         </div>
       </section>
 
-      <!-- ═══ PHILOSOPHY ═══ -->
-      <section id="philosophy" class="section">
-        <h2 class="section-title">Core Philosophy</h2>
+      <!-- ═══ FILOSOFI ═══ -->
+      <section id="filosofi" class="section">
+        <h2 class="section-title">Filosofi Inti</h2>
         <div class="phil-grid">
           <div class="phil-card">
             <div class="phil-icon">🧠</div>
-            <h3>Knowledge Before Code</h3>
-            <p>Source code is a <em>representation</em> of knowledge, not the truth itself. The runtime works from the Knowledge Model, not raw files.</p>
+            <h3>Pengetahuan Sebelum Kode</h3>
+            <p>Source code adalah <em>representasi</em> dari pengetahuan, bukan kebenaran mutlak. Runtime bekerja berdasarkan Knowledge Model, bukan file mentah.</p>
           </div>
           <div class="phil-card">
             <div class="phil-icon">⚙️</div>
-            <h3>Runtime Before Interface</h3>
-            <p>The runtime is the system. Desktop apps, CLIs, APIs, and editor extensions are just interfaces to it.</p>
+            <h3>Runtime Sebelum Antarmuka</h3>
+            <p>Runtime adalah inti sistem. Aplikasi desktop, CLI, API, dan ekstensi editor hanyalah antarmuka terhadap runtime tersebut.</p>
           </div>
           <div class="phil-card">
             <div class="phil-icon">🔬</div>
-            <h3>Intelligence Through Structure</h3>
-            <p>AI understands projects through structured knowledge built by the runtime — not through raw file dumps.</p>
+            <h3>Kecerdasan Melalui Struktur</h3>
+            <p>AI memahami proyek melalui pengetahuan terstruktur yang dibangun oleh runtime — bukan melalui potongan file mentah.</p>
           </div>
           <div class="phil-card">
             <div class="phil-icon">🎯</div>
-            <h3>Deterministic Core</h3>
-            <p>Everything that can be computed algorithmically stays in the runtime. AI handles reasoning and creativity only.</p>
+            <h3>Inti yang Deterministik</h3>
+            <p>Segala sesuatu yang dapat dihitung secara algoritmik tetap berada di runtime. AI hanya menangani penalaran dan kreativitas.</p>
           </div>
         </div>
       </section>
 
-      <!-- ═══ VISION ═══ -->
-      <section id="vision" class="section">
-        <h2 class="section-title">Vision &amp; Mission</h2>
+      <!-- ═══ VISI ═══ -->
+      <section id="visi" class="section">
+        <h2 class="section-title">Visi &amp; Misi</h2>
         <div class="vision-block">
           <div class="vision-card primary">
-            <h3>Vision</h3>
-            <p>Build a software engineering runtime that understands projects as <strong>living knowledge models</strong>, enabling humans and AI to work together consistently, at scale, with full accountability.</p>
+            <h3>Visi</h3>
+            <p>Membangun <em>runtime</em> rekayasa perangkat lunak yang memahami proyek sebagai <strong>model pengetahuan hidup</strong>, sehingga manusia dan AI dapat bekerja bersama secara konsisten, dalam skala besar, dengan pertanggungjawaban penuh.</p>
           </div>
           <div class="vision-card secondary">
-            <h3>Key Missions</h3>
+            <h3>Misi Utama</h3>
             <ul>
-              <li>Shift from <strong>file-centric</strong> to <strong>knowledge-centric</strong> development</li>
-              <li>Reduce dependency on LLM context windows</li>
-              <li>Provide a foundation for <strong>autonomous software engineering</strong></li>
-              <li>Build a modular, provider-independent architecture</li>
+              <li>Menggeser paradigma dari <strong>berpusat pada file</strong> menjadi <strong>berpusat pada pengetahuan</strong></li>
+              <li>Mengurangi ketergantungan pada <em>context window</em> LLM</li>
+              <li>Menyediakan fondasi untuk <strong>rekayasa perangkat lunak otonom</strong></li>
+              <li>Membangun arsitektur modular yang independen terhadap penyedia AI</li>
             </ul>
           </div>
         </div>
       </section>
 
-      <!-- ═══ PRINCIPLES ═══ -->
-      <section id="principles" class="section">
-        <h2 class="section-title">Architectural Principles</h2>
+      <!-- ═══ PRINSIP ═══ -->
+      <section id="prinsip" class="section">
+        <h2 class="section-title">Prinsip Arsitektur</h2>
         <div class="principles-scroll">
-          <div class="principle-item"><span class="principle-tag">AP-001</span> Microkernel Architecture</div>
-          <div class="principle-item"><span class="principle-tag">AP-002</span> Service Isolation</div>
-          <div class="principle-item"><span class="principle-tag">AP-003</span> Event First</div>
-          <div class="principle-item"><span class="principle-tag">AP-004</span> API Driven</div>
-          <div class="principle-item"><span class="principle-tag">AP-005</span> Stateless Services</div>
-          <div class="principle-item"><span class="principle-tag">AP-006</span> Dependency Inversion</div>
-          <div class="principle-item"><span class="principle-tag">AP-007</span> Explicit Dependencies</div>
-          <div class="principle-item"><span class="principle-tag">AP-008</span> Transactional State</div>
-          <div class="principle-item"><span class="principle-tag">AP-009</span> Version Everything</div>
-          <div class="principle-item"><span class="principle-tag">AP-010</span> Observable by Default</div>
+          <div class="principle-item"><span class="principle-tag">AP-001</span> Arsitektur Microkernel</div>
+          <div class="principle-item"><span class="principle-tag">AP-002</span> Isolasi Layanan</div>
+          <div class="principle-item"><span class="principle-tag">AP-003</span> Event Sebagai Prioritas</div>
+          <div class="principle-item"><span class="principle-tag">AP-004</span> Berbasis API</div>
+          <div class="principle-item"><span class="principle-tag">AP-005</span> Layanan Tanpa Status</div>
+          <div class="principle-item"><span class="principle-tag">AP-006</span> Pembalikan Ketergantungan</div>
+          <div class="principle-item"><span class="principle-tag">AP-007</span> Ketergantungan Eksplisit</div>
+          <div class="principle-item"><span class="principle-tag">AP-008</span> State Transaksional</div>
+          <div class="principle-item"><span class="principle-tag">AP-009</span> Versi pada Segala Hal</div>
+          <div class="principle-item"><span class="principle-tag">AP-010</span> Terobservasi Secara Bawaan</div>
         </div>
       </section>
 
       <!-- ═══ STACK ═══ -->
-      <section id="stack" class="section">
-        <h2 class="section-title">Technology Stack</h2>
+      <section id="teknologi" class="section">
+        <h2 class="section-title">Tumpukan Teknologi</h2>
         <div class="stack-grid">
-          <div class="stack-item"><span class="stack-label">Language</span><span class="stack-value">Go</span></div>
+          <div class="stack-item"><span class="stack-label">Bahasa</span><span class="stack-value">Go</span></div>
           <div class="stack-item"><span class="stack-label">Desktop</span><span class="stack-value">Wails</span></div>
-          <div class="stack-item"><span class="stack-label">Storage</span><span class="stack-value">SQLite + Graph Storage</span></div>
+          <div class="stack-item"><span class="stack-label">Penyimpanan</span><span class="stack-value">SQLite + Graph Storage</span></div>
           <div class="stack-item"><span class="stack-label">Parser</span><span class="stack-value">Tree-sitter</span></div>
-          <div class="stack-item"><span class="stack-label">AI Providers</span><span class="stack-value">Cloud / Local / Enterprise</span></div>
-          <div class="stack-item"><span class="stack-label">Architecture</span><span class="stack-value">Graph-Native Microkernel</span></div>
+          <div class="stack-item"><span class="stack-label">AI Provider</span><span class="stack-value">Cloud / Lokal / Enterprise</span></div>
+          <div class="stack-item"><span class="stack-label">Arsitektur</span><span class="stack-value">Graph-Native Microkernel</span></div>
         </div>
       </section>
 
       <!-- ═══ ROADMAP ═══ -->
       <section id="roadmap" class="section">
-        <h2 class="section-title">Development Roadmap</h2>
+        <h2 class="section-title">Peta Pengembangan</h2>
         <div class="roadmap">
           <div class="roadmap-phase">
             <div class="phase-dot"></div>
             <div class="phase-content">
-              <h3>Phase 1 — Runtime Foundation</h3>
-              <p>Runtime Coordinator · Event System · Storage Layer</p>
+              <h3>Fase 1 — Fondasi Runtime</h3>
+              <p>Runtime Coordinator · Sistem Event · Lapisan Penyimpanan</p>
             </div>
           </div>
           <div class="roadmap-line"></div>
           <div class="roadmap-phase">
             <div class="phase-dot"></div>
             <div class="phase-content">
-              <h3>Phase 2 — Understanding Engine</h3>
-              <p>Workspace Scanner · Parser Pipeline · Knowledge Model · Knowledge Graph</p>
+              <h3>Fase 2 — Mesin Pemahaman</h3>
+              <p>Pemindai Workspace · Pipeline Parser · Knowledge Model · Knowledge Graph</p>
             </div>
           </div>
           <div class="roadmap-line"></div>
           <div class="roadmap-phase">
             <div class="phase-dot"></div>
             <div class="phase-content">
-              <h3>Phase 3 — Intelligence Layer</h3>
-              <p>Context Engine · AI Provider · Planning System</p>
+              <h3>Fase 3 — Lapisan Kecerdasan</h3>
+              <p>Context Engine · AI Provider · Sistem Perencanaan</p>
             </div>
           </div>
           <div class="roadmap-line"></div>
           <div class="roadmap-phase">
             <div class="phase-dot"></div>
             <div class="phase-content">
-              <h3>Phase 4 — Controlled Automation</h3>
-              <p>Action Processor · Validation · Git Integration</p>
+              <h3>Fase 4 — Otomatisasi Terkendali</h3>
+              <p>Action Processor · Validasi · Integrasi Git</p>
             </div>
           </div>
           <div class="roadmap-line"></div>
           <div class="roadmap-phase">
             <div class="phase-dot"></div>
             <div class="phase-content">
-              <h3>Phase 5 — Extension Ecosystem</h3>
-              <p>Plugin System · External Integration · Community</p>
+              <h3>Fase 5 — Ekosistem Ekstensi</h3>
+              <p>Sistem Plugin · Integrasi Eksternal · Komunitas</p>
             </div>
           </div>
         </div>
@@ -185,14 +184,13 @@ function renderContent() {
       <!-- ═══ FOOTER ═══ -->
       <footer class="footer">
         <p>Project Aether — <strong>A</strong> Graph-Native <strong>A</strong>utonomous <strong>S</strong>oftware <strong>E</strong>ngineering <strong>R</strong>untime</p>
-        <p class="footer-meta">GraphOS · Draft Stage · Built with structured knowledge</p>
+        <p class="footer-meta">GraphOS · Tahap Draft · Dibangun dengan pengetahuan terstruktur</p>
       </footer>
 
     </div>
   `;
 }
 
-// ─── Animated Background (Particle Network) ───
 function initBgCanvas() {
   const canvas = document.getElementById('bg-canvas');
   if (!canvas) return;
@@ -210,8 +208,7 @@ function initBgCanvas() {
   for (let i = 0; i < PCOUNT; i++) {
     particles.push({
       x: Math.random() * w, y: Math.random() * h,
-      vx: (Math.random() - 0.5) * 0.25,
-      vy: (Math.random() - 0.5) * 0.25,
+      vx: (Math.random() - 0.5) * 0.25, vy: (Math.random() - 0.5) * 0.25,
       r: Math.random() * 2 + 0.5,
     });
   }
@@ -247,16 +244,12 @@ function initBgCanvas() {
   draw();
 }
 
-// ─── Scroll Reveal ───
 function setupScrollAnimations() {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      }
+      if (entry.isIntersecting) entry.target.classList.add('visible');
     });
   }, { threshold: 0.1 });
-
   document.querySelectorAll('.section, .hero, .footer').forEach(el => {
     el.classList.add('fade-section');
     observer.observe(el);
