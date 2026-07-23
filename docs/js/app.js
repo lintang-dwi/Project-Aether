@@ -107,18 +107,18 @@ function renderContent() {
       <!-- NAMA -->
       <section id="nama" class="section">
         <h2 class="section-title">Makna Dibalik Nama</h2>
-        <div class="acronym-grid">
-          <div class="acronym-card"><span class="acr-letter">A</span><span class="acr-word">Graph-Native</span><span class="acr-desc">Dibangun di atas knowledge graph — relasi adalah yang utama, file hanyalah representasi turunan.</span></div>
-          <div class="acronym-card"><span class="acr-letter">U</span><span class="acr-word">niversal</span><span class="acr-desc">Agnostik terhadap bahasa pemrograman. Runtime yang mampu memahami basis kode apa pun.</span></div>
-          <div class="acronym-card"><span class="acr-letter">T</span><span class="acr-word">hinking</span><span class="acr-desc">Lapisan penalaran berbantuan AI di atas inti sistem yang deterministik dan dapat diprediksi.</span></div>
-          <div class="acronym-card"><span class="acr-letter">O</span><span class="acr-word">rchestrated</span><span class="acr-desc">Koordinasi berbasis event secara real-time di seluruh subsistem runtime.</span></div>
-          <div class="acronym-card"><span class="acr-letter">M</span><span class="acr-word">odular</span><span class="acr-desc">Arsitektur microkernel — perkuat sistem tanpa menyentuh inti.</span></div>
-          <div class="acronym-card"><span class="acr-letter">A</span><span class="acr-word">utonomous</span><span class="acr-desc">Runtime yang berevolusi bersama proyek, belajar dari setiap perubahan.</span></div>
-          <div class="acronym-card"><span class="acr-letter">T</span><span class="acr-word">raceable</span><span class="acr-desc">Setiap keputusan terekam. Setiap perubahan memiliki jejak yang dapat ditelusuri.</span></div>
-          <div class="acronym-card"><span class="acr-letter">I</span><span class="acr-word">ntegrated</span><span class="acr-desc">Satu runtime untuk analisis, perencanaan, eksekusi, dan peninjauan kode.</span></div>
-          <div class="acronym-card"><span class="acr-letter">C</span><span class="acr-word">onsistent</span><span class="acr-desc">Knowledge Model selalu sinkron dengan source code, tidak pernah tertinggal.</span></div>
-          <div class="acronym-card"><span class="acr-letter">E</span><span class="acr-word">xtensible</span><span class="acr-desc">Sistem plugin untuk tools, provider AI, dan bahasa pemrograman baru.</span></div>
-          <div class="acronym-card"><span class="acr-letter">R</span><span class="acr-word">untime-First</span><span class="acr-desc">Desktop, CLI, API, ekstensi editor — semua berbasis runtime yang identik.</span></div>
+        <div class="acronym-list">
+          <div class="acronym-row"><span class="acr-badge">A</span><div class="acr-body"><span class="acr-word">Graph-Native</span><span class="acr-desc">Dibangun di atas knowledge graph — relasi adalah yang utama, file hanyalah representasi turunan.</span></div></div>
+          <div class="acronym-row"><span class="acr-badge">U</span><div class="acr-body"><span class="acr-word">niversal</span><span class="acr-desc">Agnostik terhadap bahasa pemrograman. Runtime yang mampu memahami basis kode apa pun.</span></div></div>
+          <div class="acronym-row"><span class="acr-badge">T</span><div class="acr-body"><span class="acr-word">hinking</span><span class="acr-desc">Lapisan penalaran berbantuan AI di atas inti sistem yang deterministik dan dapat diprediksi.</span></div></div>
+          <div class="acronym-row"><span class="acr-badge">O</span><div class="acr-body"><span class="acr-word">rchestrated</span><span class="acr-desc">Koordinasi berbasis event secara real-time di seluruh subsistem runtime.</span></div></div>
+          <div class="acronym-row"><span class="acr-badge">M</span><div class="acr-body"><span class="acr-word">odular</span><span class="acr-desc">Arsitektur microkernel — perkuat sistem tanpa menyentuh inti.</span></div></div>
+          <div class="acronym-row"><span class="acr-badge">A</span><div class="acr-body"><span class="acr-word">utonomous</span><span class="acr-desc">Runtime yang berevolusi bersama proyek, belajar dari setiap perubahan.</span></div></div>
+          <div class="acronym-row"><span class="acr-badge">T</span><div class="acr-body"><span class="acr-word">raceable</span><span class="acr-desc">Setiap keputusan terekam. Setiap perubahan memiliki jejak yang dapat ditelusuri.</span></div></div>
+          <div class="acronym-row"><span class="acr-badge">I</span><div class="acr-body"><span class="acr-word">ntegrated</span><span class="acr-desc">Satu runtime untuk analisis, perencanaan, eksekusi, dan peninjauan kode.</span></div></div>
+          <div class="acronym-row"><span class="acr-badge">C</span><div class="acr-body"><span class="acr-word">onsistent</span><span class="acr-desc">Knowledge Model selalu sinkron dengan source code, tidak pernah tertinggal.</span></div></div>
+          <div class="acronym-row"><span class="acr-badge">E</span><div class="acr-body"><span class="acr-word">xtensible</span><span class="acr-desc">Sistem plugin untuk tools, provider AI, dan bahasa pemrograman baru.</span></div></div>
+          <div class="acronym-row"><span class="acr-badge">R</span><div class="acr-body"><span class="acr-word">untime-First</span><span class="acr-desc">Desktop, CLI, API, ekstensi editor — semua berbasis runtime yang identik.</span></div></div>
         </div>
       </section>
 
