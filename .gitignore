@@ -8,15 +8,18 @@
 *.out
 *.o
 *.a
-*.mod
-*.sum
-/go.sum
 vendor/
 dist/
 build/
 bin/
 out/
 tmp/
+
+# ── Frontend (Node / Vite) ──
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+frontend/*.tsbuildinfo
 
 # ── IDE & Editor ──
 .idea/
@@ -50,3 +53,6 @@ Software Architecture Document/
 
 Project Aether Glossary.md
 FOUNDATION.md
+workflow step/
+AI_CONTEXT.md
+PLAN.MD
